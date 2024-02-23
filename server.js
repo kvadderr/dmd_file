@@ -30,6 +30,19 @@ app.post('/uploadVoice', async (req, res) => {
   res.send(upload);
 });
 
+app.post('/uploadSlogan', async (req, res) => {
+  let buffer = req.files[0].buffer;
+  let upload = await s3.Upload({ buffer }, '/voices/');
+  res.send(upload);
+});
+
+app.post('/uploadSound', async (req, res) => {
+  let buffer = req.files[0].buffer;
+  let upload = await s3.Upload({ buffer }, '/voices/');
+  res.send(upload);
+});
+
+
 app.post('/uploadAudio', async (req, res) => {
   let buffer = req.files[0].buffer;
   let upload = await s3.Upload({ buffer }, '/voices/');
