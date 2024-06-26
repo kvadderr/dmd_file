@@ -48,3 +48,9 @@ app.post('/uploadAudio', async (req, res) => {
   let upload = await s3.Upload({ buffer }, '/voices/');
   res.send(upload);
 });
+
+app.post('/uploadAvatar', async (req, res) => {
+  let buffer = req.files[0].buffer;
+  let upload = await s3.Upload({ buffer }, '/avatars/');
+  res.send(upload);
+});
